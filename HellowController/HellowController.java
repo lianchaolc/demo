@@ -88,4 +88,63 @@ public class HellowController {
 
     }
 
+    /***
+     * 删除一条数据
+     */
+
+
+    @GetMapping("/delDataByInsNos")
+//    public Result delDataByInsNos(@RequestParam("inspectnos[]")String[] inspectnos){
+    public Result delDataByInsNos(String inspectnos){
+//        String insNosStr = this.arrToString(inspectnos);
+        userService.delDataByInsNos(inspectnos);
+        return ResultGenerator.genSuccessResult();
+    }
+
+    /**
+     * 前台传递的单号数组转为（'xx','xx'...）格式的字符串
+     * @param values
+     * @return
+     */
+    private String arrToString(String[] values){
+        String insNosStr = "";
+        if(values !=null){
+            for(int i=0;i<values.length;i++){
+                insNosStr +="'"+values[i]+"'";
+                if(i < values.length-1){
+                    insNosStr += ",";
+                }
+            }
+        }
+        return insNosStr;
+    }
+
+
+    /**
+     * 更新盘库单状态
+     *
+     * @param inspectno 盘库单号
+     * @param state 状态
+     * @param savedate 修改时间
+     */
+    /**
+     * 保存扫描结果
+     *
+     * @param param 扫描到的数据
+     * @return
+     */
+    @PostMapping("/saveUserdata")
+    public Result saveUserdata(@RequestBody List<Map<String, Object>> param) {
+
+//        CommonBO commonBO = UserService.insertInspectDetail(param);
+
+//        if(commonBO.getFlag()){
+//            return ResultGenerator.genFailResult(commonBO.getMsg());
+//        }
+
+        return ResultGenerator.genSuccessResult();
+
+    }
+
+
 }

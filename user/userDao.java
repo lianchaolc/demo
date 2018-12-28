@@ -36,4 +36,10 @@ import java.util.Map;
      * 通过一条数据进行删除数据
      */
     void delDataByInsNos(String insNos);
+
+    /***
+     * 更新数据状态
+     *
+     */
+    void updateInspectnoState(User mUser);
 }

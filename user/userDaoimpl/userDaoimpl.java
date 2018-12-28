@@ -40,7 +40,8 @@ public class userDaoimpl implements userDao {
      // 删除某一条数据
     private  static  String  DELETEUSER =" delete FROM user_info  WHERE  inspectno in (\"+ insNos+\")\" ";
 
-
+//  更新代码
+    private static String  updataUserinfo="update user_info set username = ?, userpassword = ?,userpw=?,userphone=?,user=userstate=? where inspectno = ?";
     /***
      * 查询所有
      * @return
@@ -70,17 +71,7 @@ public class userDaoimpl implements userDao {
 //        return jdbcTemplate.queryForList(sql);
 //    }
 
-    /**
-     * 删除一条数据
-     * @param insNos
-     */
 
-    @Override
-    @Transactional(rollbackFor= Exception.class)
-    public void delDataByInsNos(String insNos) {
-        DELETEUSER =" delete FROM user_info  WHERE  inspectno in (\"+ insNos+\")\" ";
-        jdbcTemplate.execute(DELETEUSER);
-    }
 
 
 
@@ -100,13 +91,6 @@ public class userDaoimpl implements userDao {
                 ps.setString(4, mUser.getUserpw());
                 ps.setString(5,  mUser.getUserphone());
                 ps.setInt(6, mUser.getUserstate());
-
-//                ps.setInt(1, 1);
-//                ps.setString(2,"2");
-//                ps.setString(3, "2");
-//                ps.setString(4, "3");
-//                ps.setString(5, "3");
-//                ps.setInt(6,1);
             }
 
             @Override
@@ -115,7 +99,34 @@ public class userDaoimpl implements userDao {
             }
         });
     }
+    /**
+     * 删除一条数据
+     * @param insNos
+     */
+    @Override
+    @Transactional(rollbackFor= Exception.class)
+    public void delDataByInsNos(String insNos) {
+        DELETEUSER =" delete FROM user_info  WHERE  user_info.username in (\"+ insNos+\") ";
+        jdbcTemplate.execute(DELETEUSER);
+    }
 
+    @Override
+    public void updateInspectnoState(List<User> inspectDetailDOList) {
+        User   mUser =new User();
+        jdbcTemplate.update(updataUserinfo,mUser.getUsername(), mUser.getUserpassword(),
+                mUser.getUserpassword(), mUser.getUserpw(),mUser.getUserphone(), mUser.getUserstate()
+              );
+    }
+
+
+    /***
+     * 更心某一条数据
+     * @param username
+     * @param userpassword
+     * @param userpw
+     * @param userphone
+     * @param userstate
+     */
 
 
 

@@ -26,4 +26,19 @@ public  interface  UserService {
      * 增加一条数据
      */
     CommonBO addUserInfoById(List<Map<String, Object>> param);
+
+
+    /***
+     * 删除单条数据
+     */
+
+    void delDataByInsNos(String insNos);
+
+    /**
+     * 更新数据
+     *
+     */
+
+
+    void updateInspectnoState(String userid,String username,String savedate);
 }
