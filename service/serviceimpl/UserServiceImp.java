@@ -88,6 +88,12 @@ public class UserServiceImp implements UserService {
 //        formDao.delDataByInsNos(insNos);//删除单条
         logger.info("***************************"+insNos);
     }
+    @Override
+
+    @Transactional(rollbackFor = Exception.class)
+    public void updateInspectnoState(String userid, String username, String userpassword, String userpw, String userphone, String userstate) {
+
+    }
 
 
     /**
@@ -96,22 +102,6 @@ public class UserServiceImp implements UserService {
      * @return
      */
 
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public CommonBO insertInspectDetail(List<Map<String, Object>> param) {
-        List<User> inspectDetailDOList = new ArrayList<User>();
-        for (Map<String, Object> map : param){
-            User   muser = new User();//  实体类
-            muser.setUsername(map.get("username").toString());
-            muser.setUserpassword(map.get("userpassword").toString().toUpperCase());
-            muser.setUserpw(map.get("userpw").toString());
-            muser.setUserphone(map.get("userphone").toString());
-            muser.setUserstate(Integer.valueOf(map.get("userstate").toString()));
-            inspectDetailDOList.add(muser);
-        }
-        userDao.updateInspectnoState(inspectDetailDOList);
-        CommonBO  mCommonBO =new CommonBO();
-        return mCommonBO;
-    }
+
 
 }

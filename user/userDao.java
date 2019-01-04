@@ -41,5 +41,5 @@ import java.util.Map;
      * 更新数据状态
      *
      */
-    void updateInspectnoState(User mUser);
+    void updateInspectnoState(String userid,String username,String userpassword,String userpw,String userphone,String userstate);
 }

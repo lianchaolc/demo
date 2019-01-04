@@ -111,11 +111,8 @@ public class userDaoimpl implements userDao {
     }
 
     @Override
-    public void updateInspectnoState(List<User> inspectDetailDOList) {
-        User   mUser =new User();
-        jdbcTemplate.update(updataUserinfo,mUser.getUsername(), mUser.getUserpassword(),
-                mUser.getUserpassword(), mUser.getUserpw(),mUser.getUserphone(), mUser.getUserstate()
-              );
+    public void updateInspectnoState(String userid, String username, String userpassword, String userpw, String userphone, String userstate) {
+
     }
 
 

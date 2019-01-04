@@ -134,7 +134,7 @@ public class HellowController {
      * @return
      */
     @PostMapping("/saveUserdata")
-    public Result saveUserdata(@RequestBody List<Map<String, Object>> param) {
+    public Result updateInspectnoState(@RequestBody List<Map<String, Object>> param) {
 
 //        CommonBO commonBO = UserService.insertInspectDetail(param);
 

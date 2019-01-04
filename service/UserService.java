@@ -40,5 +40,5 @@ public  interface  UserService {
      */
 
 
-    void updateInspectnoState(String userid,String username,String savedate);
+    void updateInspectnoState(String userid,String username,String userpassword,String userpw,String userphone,String userstate);
 }
