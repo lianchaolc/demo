@@ -17,7 +17,7 @@ public class DataSourceConfig {
     private String driverClassName;
     @Value("${spring.datasource.url}")
     private String datasourceUrl;
-
+//解决链接超时问题 ?autoReconnect=true&amp;failOverReadOnly=false
 
     //对接前置库
     @Bean
