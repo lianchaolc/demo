@@ -117,7 +117,7 @@ public class userDaoimpl implements userDao {
 
 
     /***
-     * 更心某一条数据
+     * 更新某一条数据
      * @param username
      * @param userpassword
      * @param userpw

@@ -49,7 +49,6 @@ public class UserServiceImp implements UserService {
     @Transactional(rollbackFor = Exception.class)
         public CommonBO addUserInfoById(List<Map<String, Object>> param) {
             List<User> inspectDetailDOList = new ArrayList<User>();
-            User mUser;
 
             for (Map<String, Object> map : param){
                 User  muser = new User();
