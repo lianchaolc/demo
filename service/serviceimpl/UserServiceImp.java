@@ -18,7 +18,7 @@ import java.util.Map;
  * 服务的实现接口类
  */
 @Service
-public class UserServiceImp implements UserService {
+public class UserServiceImp  implements UserService {
 
     @Autowired
     private userDao userDao;

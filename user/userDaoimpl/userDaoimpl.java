@@ -36,7 +36,7 @@ public class userDaoimpl implements userDao {
 //    查询的那条
     private  static  final  String  SELECT_USERINFOFORUSRID ="SELECT  * FROM  user_info  WHERE userid=?";
     // 新增的某一条数据
-    private  static  final  String   AddINFO="INSERT INTO user_info(userid,username,userpassword,userpw,userphone,userstate) VALUES(?,?,?,?,?,?)";
+    private  static  final  String   AddINFO="INSERT INTO user_info(username,userpassword,userpw,userphone,userstate) VALUES(?,?,?,?,?)";
      // 删除某一条数据
     private  static  String  DELETEUSER =" delete FROM user_info  WHERE  inspectno in (\"+ insNos+\")\" ";
 
@@ -86,11 +86,11 @@ public class userDaoimpl implements userDao {
             public void setValues(PreparedStatement ps, int i) throws SQLException {
                 User mUser = inspectDetailDOList.get(i);
 //                ps.setInt(1, mUser.getUserid());
-                ps.setString(2, mUser.getUsername());
-                ps.setString(3, mUser.getUserpassword());
-                ps.setString(4, mUser.getUserpw());
-                ps.setString(5,  mUser.getUserphone());
-                ps.setInt(6, mUser.getUserstate());
+                ps.setString(1, mUser.getUsername());
+                ps.setString(2, mUser.getUserpassword());
+                ps.setString(3, mUser.getUserpw());
+                ps.setString(4,  mUser.getUserphone());
+                ps.setInt(5, mUser.getUserstate());
             }
 
             @Override
